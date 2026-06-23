@@ -1,0 +1,31 @@
+<main class="container">
+  <h1>Weather Forecast</h1>
+  <p class="subtitle">Angular frontend calling .NET Weather API</p>
+
+  @if (error) {
+    <p class="error">{{ error }}</p>
+  } @else if (forecasts.length === 0) {
+    <p>Loading...</p>
+  } @else {
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>°C</th>
+          <th>°F</th>
+          <th>Summary</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of forecasts; track item.date) {
+          <tr>
+            <td>{{ item.date }}</td>
+            <td>{{ item.temperatureC }}</td>
+            <td>{{ item.temperatureF }}</td>
+            <td>{{ item.summary }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</main>
