@@ -11,7 +11,7 @@ export interface WeatherForecast {
 
 @Injectable({ providedIn: 'root' })
 export class WeatherService {
-  private readonly apiUrl = 'http://localhost:5156/WeatherForecast';
+  private readonly apiUrl = 'http://localhost:5000/WeatherForecast';
 
   constructor(private http: HttpClient) {}
 
